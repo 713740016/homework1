@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老師作業管理系統</title>
+    <link rel="stylesheet" href="teacher.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 作業繳交狀況管理</h1>
+            <p class="subtitle">老師編輯頁面</p>
+        </header>
+
+        <div class="controls">
+            <button id="addStudentBtn" class="btn btn-primary">➕ 新增學生</button>
+            <button id="addAssignmentBtn" class="btn btn-primary">➕ 新增作業</button>
+            <button id="clearAllBtn" class="btn btn-danger">🗑️ 清除所有資料</button>
+        </div>
+
+        <div class="table-container">
+            <table id="homeworkTable">
+                <thead>
+                    <tr id="tableHeader">
+                        <th>學生姓名</th>
+                        <!-- 作業標題將動態插入這裡 -->
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- 動態生成 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 新增學生模態框 -->
+    <div id="addStudentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>新增學生</h2>
+            <input type="text" id="studentNameInput" placeholder="請輸入學生姓名" maxlength="20">
+            <div class="modal-buttons">
+                <button id="confirmAddStudent" class="btn btn-primary">確認</button>
+                <button id="cancelAddStudent" class="btn btn-secondary">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 新增作業模態框 -->
+    <div id="addAssignmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>新增作業</h2>
+            <input type="text" id="assignmentNameInput" placeholder="請輸入作業名稱" maxlength="30">
+            <div class="modal-buttons">
+                <button id="confirmAddAssignment" class="btn btn-primary">確認</button>
+                <button id="cancelAddAssignment" class="btn btn-secondary">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="dataManager.js"></script>
+    <script src="teacher.js"></script>
+</body>
+</html>
+
